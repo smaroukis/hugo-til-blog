@@ -11,4 +11,8 @@ cp -R ../../hugofiles/* $HUGO_ROOT/layouts/_default/_markup
 # rm -rf $HUGO_ROOT/content/posts
 # mkdir -p $HUGO_ROOT/content/posts
 
+echo "🍿 Exporting obsidian vault..."
 obsidian-export "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always $HUGO_ROOT/content/posts/
+
+# echo "🍿 Encoding filenames..."
+# python encode-filenames-python/encode.py $HUGO_ROOT/content/posts/attachments
