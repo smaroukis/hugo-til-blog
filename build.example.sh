@@ -6,17 +6,16 @@ set -e
 BLOG_PATH="SET ME"
 
 function copy_vault {
-    ##### CHANGE START HERE
-    ## Examples:
+    ## Setup Once
     #
-    # github clone repo
-    # git clone https://github.com/MYORG/MYREPO ./vault
+    # github clone repo into `vault` folder
+    # git submodule init
+    # git submodule add git@github.com/smaroukis/til ./vault
 
+    # remove old vault
+    rm -rf ./vault
     # update submodule
-
-    echo "ADD YOUR CODE TO CLONE OR COPY YOUR VAULT HERE"
-    exit 1
-    ##### CHANGE STOP HERE
+    git submodule update
 }
 
 ## This function is called after all files are converted but before calling the Hugo command

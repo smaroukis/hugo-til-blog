@@ -1,12 +1,12 @@
 # Obsidian to Hugo blog builder
 
-## Instructions to fork this repository
+Forked from TODO add link
 
-This repository contains my personal set up to build my Obsidian notes into a Hugo based blog. This will take 1 or 2 hours.
+### Modifications
+- add in updated obsidian-export binary (and test with `obsidian-export vault-root --start-at vault-root/path/to/notes exported-notes`)
 
-### Fork this repo
-
-Yes, fork this repo.
+---
+original:
 
 ### Prepare your Hugo blog
 
