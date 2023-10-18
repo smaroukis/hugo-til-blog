@@ -19,11 +19,9 @@ rm -rf $HUGO_ROOT/content/tmp
 # TODO - handle images in assets/images and or static/images
 
 echo "🍿 Exporting obsidian vault..."
-# obsidian-export "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always $HUGO_ROOT/content/posts/
 # Using dev version of obsidian-export
 $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always --link=none $HUGO_ROOT/content/posts/
 # added:   --link LINK-STRATEGY       Link strategy (one of: encoded, none) (default: encoded)
 
-# HERE - still encoding
-
 # TODO - move $HUGO_ROOT/content/posts/attachments to $HUGO_ROOT/assets/images
+# TODO - add in script for responsive images
