@@ -3,7 +3,11 @@
 Forked from TODO add link
 
 ### Modifications
-- add in updated obsidian-export binary (and test with `obsidian-export vault-root --start-at vault-root/path/to/notes exported-notes`)
+- testing with script in `dev/test.sh`
+  - added preservation of `$HUGO_ROOT/content/posts/_index.md` 
+- testing with sample vault in `dev/sample-vault`
+- added submodule `zoni/obsidian-export` under `dev/obsidian-export` and merged in [this commit](https://github.com/zoni/obsidian-export/pull/140/commits/ec4fa7329faac6f59cc9abc27eb31b9769f736c4) for control over link encoding
+- updated `obsidian-export` binary for `Darwin` (and test with `obsidian-export vault-root --start-at vault-root/path/to/notes exported-notes`)
 
 ---
 original:
