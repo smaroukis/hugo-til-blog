@@ -13,3 +13,5 @@ hugoroot/.hugo_build.lock
 # Obsidian Templates
 dev/sample-vault/Templates
 dev/sample-vault/.obsidian
+dev/obsidian-export
+dev/sample-vault/.obsidian/workspace.json
