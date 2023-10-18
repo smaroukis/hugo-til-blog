@@ -9,3 +9,7 @@ hugoroot/content/posts
 hugoroot/public
 hugoroot/resources/_gen/
 hugoroot/.hugo_build.lock
+
+# Obsidian Templates
+dev/sample-vault/Templates
+dev/sample-vault/.obsidian

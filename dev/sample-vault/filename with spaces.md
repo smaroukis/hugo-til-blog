@@ -1,5 +1,9 @@
-
-
+---
+title: "filename with spaces"
+date: 2023-10-18
+description: null
+tags: [test]
+---
 
 Currently a few ways to embed images:
 1. `obsidian-export` will export the `sample-vault/attachments` files into `$HUGO_ROOT/content/posts/attachments` (or whatever destination we pass). If we also include the partials that allow relative links to work (`render-image.html` and `render.link.html`) then the images will be served **but not responsive or scaled**
@@ -9,6 +13,8 @@ Currently a few ways to embed images:
 Typically we can include images at `/static/images`
 
 ## 1 - No edits
+
+> Currently Obsidian encodes spaces when we insert images 
 
 The following 
 ```
@@ -25,5 +31,7 @@ The following line:
 {{< imgh src="attachments/image%20with%20spaces.png" alt="alt text" >}}
 ```
 
+%%
 Renders as the image: 
 {{< imgh src="attachments/image%20with%20spaces.png" alt="alt text" >}}
+%%
