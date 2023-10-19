@@ -13,8 +13,8 @@ function copy_vault {
     # git submodule add git@github.com/smaroukis/til ./vault
 
     # remove old vault
-    rm -rf ./vault
-    # update submodule
+    rm -rf $VAULT_PATH/*
+    # update submodule to pull back down files
     git submodule update
 }
 
@@ -62,7 +62,7 @@ $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH$BLOG_PATH" --frontmatter=al
 
 echo "✅ Converted Obsidian posts into Hugo compatible Markdown"
 
-pushd $HUGO_ROOT > /mnt/null
+pushd $HUGO_ROOT > /dev/null
 
 echo "🪝 Calling before_build_hook..."
 
@@ -70,7 +70,7 @@ before_build_hook
 
 echo "🏗 Building blog..."
 
-hugo -D > /mnt/null
-popd > /mnt/null
+hugo -D > /dev/null
+popd > /dev/null
 
 echo "✅ Blog built!!! Have fun!"

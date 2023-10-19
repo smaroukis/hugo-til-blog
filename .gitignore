@@ -11,6 +11,6 @@ hugoroot/resources/_gen/
 hugoroot/.hugo_build.lock
 
 # Obsidian Templates
-mnt/sample-vault/Templates
-mnt/sample-vault/.obsidian
-mnt/sample-vault
+mnt/blog-source/Templates
+mnt/blog-source/.obsidian
+mnt/blog-source

@@ -4,3 +4,6 @@
 [submodule "hugoroot/themes/hugo-bearcub"]
 	path = hugoroot/themes/hugo-bearcub
 	url = git@github.com:clente/hugo-bearcub.git
+[submodule "mnt/blog-source"]
+	path = mnt/blog-source
+	url = git@github.com:smaroukis/til.git
