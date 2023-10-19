@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 HELPER_ROOT=~/11_code/obsidian-exporter-helper
-EXPORT_BINARY="$HELPER_ROOT/dev/obsidian-export/target/debug/obsidian-export"
-VAULT_PATH="$HELPER_ROOT/dev/sample-vault"
+EXPORT_BINARY="$HELPER_ROOT/mnt/obsidian-export/target/debug/obsidian-export"
+VAULT_PATH="$HELPER_ROOT/mnt/sample-vault"
 HUGO_ROOT=~/11_code/37b-til/site
 
 echo "🍿 Preparing hugo root..."

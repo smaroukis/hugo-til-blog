@@ -62,7 +62,7 @@ $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH$BLOG_PATH" --frontmatter=al
 
 echo "✅ Converted Obsidian posts into Hugo compatible Markdown"
 
-pushd $HUGO_ROOT > /dev/null
+pushd $HUGO_ROOT > /mnt/null
 
 echo "🪝 Calling before_build_hook..."
 
@@ -70,7 +70,7 @@ before_build_hook
 
 echo "🏗 Building blog..."
 
-hugo -D > /dev/null
-popd > /dev/null
+hugo -D > /mnt/null
+popd > /mnt/null
 
 echo "✅ Blog built!!! Have fun!"
