@@ -13,3 +13,4 @@ hugoroot/.hugo_build.lock
 # Obsidian Templates
 dev/sample-vault/Templates
 dev/sample-vault/.obsidian
+dev/sample-vault

@@ -11,14 +11,6 @@
             "id": "c5969f882e3c2743",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "9167a67ee7ea7e1f",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
                 "file": "filename with spaces.md",
@@ -27,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -156,11 +147,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "9167a67ee7ea7e1f",
+  "active": "c5969f882e3c2743",
   "lastOpenFiles": [
     "attachments/image with spaces.png",
     "filename with spaces.md",
     "Templates/t-TIL.md",
+    "idea - sunflower hand.md",
     "attachments/Screenshot 2023-08-20 at 12.37.39 PM.png",
     "Templates",
     "Templates 12-00-45-304/t-TIL.md",
@@ -173,7 +165,6 @@
     "attachments/circuit-joule-thief-analysis.jpeg",
     "attachments/2023-06-26 TIL Use full-ssl to avoid redirects-1687755383956.jpeg",
     "attachments/2023-06-26 TIL Use full-ssl to avoid redirects-1687755341415.jpeg",
-    "attachments/2023-06-26 TIL Use full-ssl to avoid redirects-1687755032493.jpeg",
     "Add vim-surround like shortcuts to Obsidian.md",
     "Write does not write to disk but to a buffer.md",
     "Linear Regulators Are Not That Great.md",
