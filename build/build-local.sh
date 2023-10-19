@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-LOCAL_REPO=~/11_code/obsidian-exporter-helper
-EXPORT_BINARY="$LOCAL_REPO/mnt/obsidian-export/target/debug/obsidian-export"
-VAULT_PATH="$LOCAL_REPO/mnt/blog-source"
-HUGO_ROOT="$LOCAL_REPO/hugoroot"
+# running from "(proj root)/build" dir 
+EXPORT_BINARY="../mnt/obsidian-export/target/debug/obsidian-export"
+VAULT_PATH="../mnt/blog-source"
+HUGO_ROOT="../hugoroot"
 
 function copy_vault {
     rm -rf $VAULT_PATH    
@@ -31,10 +31,14 @@ echo "🍿 Exporting obsidian vault..."
 $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always --link=none $HUGO_ROOT/content/posts/
 # added:   --link LINK-STRATEGY       Link strategy (one of: encoded, none) (default: encoded)
 
+# TODO refactor to seperate script for locally servinf
+# or have switch statement for host type or env variable
+# e.g. "if macos", serve locally
 echo "🏗 Serving blog locally..."
 pushd $HUGO_ROOT > /dev/null
 hugo server -D 
-# hugo server -D > /dev/null
+# else build site
+# hugo -D > /dev/null
 popd > /dev/null
 echo "✅ Blog built!!! Have fun!"
 
