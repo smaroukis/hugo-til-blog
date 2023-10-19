@@ -1,15 +1,12 @@
 #!/bin/zsh
 
-HELPER_ROOT=~/11_code/obsidian-exporter-helper
-EXPORT_BINARY="$HELPER_ROOT/mnt/obsidian-export/target/debug/obsidian-export"
-VAULT_PATH="$HELPER_ROOT/mnt/sample-vault"
-HUGO_ROOT=~/11_code/37b-til/site
+LOCAL_REPO=~/11_code/obsidian-exporter-helper
+EXPORT_BINARY="$LOCAL_REPO/mnt/obsidian-export/target/debug/obsidian-export"
+# TODO change to vault
+VAULT_PATH="$LOCAL_REPO/mnt/sample-vault"
+HUGO_ROOT="$LOCAL_REPO/hugoroot"
 
-echo "🍿 Preparing hugo root..."
-mkdir -p $HUGO_ROOT/layouts/_default/_markup/
-cp -R $HELPER_ROOT/hugofiles/* $HUGO_ROOT/layouts/_default/_markup
-
-# echo "🍿 Preparing hugo content..."
+echo "🍿 Preparing hugo content..."
 mkdir -p $HUGO_ROOT/content/tmp
 cp -R $HUGO_ROOT/content/posts/_index.md $HUGO_ROOT/content/tmp
 rm -rf $HUGO_ROOT/content/posts
