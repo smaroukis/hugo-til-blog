@@ -6,16 +6,10 @@ VAULT_PATH="$LOCAL_REPO/mnt/blog-source"
 HUGO_ROOT="$LOCAL_REPO/hugoroot"
 
 function copy_vault {
-    ## Setup Once
-    # git submodule add https://git@github.com/smaroukis/til "$VAULT_PATH"
-    
-    # Dev
-    # git submodule deinit -f "$VAULT_PATH"
-    # rm -rf "$VAULT_PATH"
-    # git submodule add https://git@github.com/smaroukis/til "$VAULT_PATH"
-
-    rm -rf $VAULT_PATH
-    git submodule update 
+    rm -rf $VAULT_PATH    
+    git clone https://github.com/smaroukis/til $VAULT_PATH
+    # remove README.md from source repo
+    rm $VAULT_PATH/README.md
 }
 
 echo "🍿 Preparing blog source / vault..."
@@ -37,9 +31,10 @@ echo "🍿 Exporting obsidian vault..."
 $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always --link=none $HUGO_ROOT/content/posts/
 # added:   --link LINK-STRATEGY       Link strategy (one of: encoded, none) (default: encoded)
 
-echo "🏗 Building blog..."
+echo "🏗 Serving blog locally..."
 pushd $HUGO_ROOT > /dev/null
-hugo -D > /dev/null
+hugo server -D 
+# hugo server -D > /dev/null
 popd > /dev/null
 echo "✅ Blog built!!! Have fun!"
 
