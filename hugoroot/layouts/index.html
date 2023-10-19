@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ .Content }}
+
+
+<!-- Custom index.html to show "til" section pages -->
+
+{{ partial "post_tags.html" . }}
+
+<ul class="blog-posts">
+  {{ $mainBlogPosts := where .Site.RegularPages "Section" "posts" }}
+  {{ with $mainBlogPosts }}
+    {{ range . }}
+      <li>
+        <span>
+          <i>
+            <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
+              {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+            </time>
+          </i>
+        </span>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ else }}
+      <li>
+        {{ i18n "no-posts" }}
+      </li>
+    {{ end }}
+  {{ else }}
+    <li>
+      {{ i18n "no-posts" }}
+    </li>
+  {{ end }}
+</ul>
+<!-- /custom -->
+
+{{ end }}
