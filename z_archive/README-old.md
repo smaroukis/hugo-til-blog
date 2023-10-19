@@ -1,16 +1,12 @@
 # Obsidian to Hugo blog builder
 
-Forked from TODO add link
+## Instructions to fork this repository
 
-### Modifications
-- testing with script in `dev/test.sh`
-  - added preservation of `$HUGO_ROOT/content/posts/_index.md` 
-- testing with sample vault in `dev/sample-vault`
-- added submodule `zoni/obsidian-export` under `dev/obsidian-export` and merged in [this commit](https://github.com/zoni/obsidian-export/pull/140/commits/ec4fa7329faac6f59cc9abc27eb31b9769f736c4) for control over link encoding
-- updated `obsidian-export` binary for `Darwin` (and test with `obsidian-export vault-root --start-at vault-root/path/to/notes exported-notes`)
+This repository contains my personal set up to build my Obsidian notes into a Hugo based blog. This will take 1 or 2 hours.
 
----
-original:
+### Fork this repo
+
+Yes, fork this repo.
 
 ### Prepare your Hugo blog
 

@@ -1,3 +1,3 @@
-[submodule "dev/obsidian-export"]
-	path = dev/obsidian-export
+[submodule "mnt/obsidian-export"]
+	path = mnt/obsidian-export
 	url = git@github.com:zoni/obsidian-export.git
