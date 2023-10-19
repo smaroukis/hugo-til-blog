@@ -32,15 +32,21 @@ $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always --lin
 # added:   --link LINK-STRATEGY       Link strategy (one of: encoded, none) (default: encoded)
 
 # TODO refactor to seperate script for locally servinf
-# or have switch statement for host type or env variable
-# e.g. "if macos", serve locally
-echo "🏗 Serving blog locally..."
-pushd $HUGO_ROOT > /dev/null
-hugo server -D 
-# else build site
-# hugo -D > /dev/null
-popd > /dev/null
-echo "✅ Blog built!!! Have fun!"
+# have switch statement for local or githuhbactions
+if [ "$GITHUB_ACTIONS" = "true" ]; then
+  # This is a GitHub Actions workflow
+  echo "🏗 Serving blog locally..."
+  pushd $HUGO_ROOT > /dev/null
+  hugo server -D
+  popd > /dev/null
+else
+  # This is not a GitHub Actions workflow, so build the site
+  echo "Building the blog..."
+  pushd $HUGO_ROOT > /dev/null
+  hugo -D
+  popd > /dev/null
+fi
+
 
 # TODO - move $HUGO_ROOT/content/posts/attachments to $HUGO_ROOT/assets/images
 # TODO - add in script for responsive images
