@@ -10,6 +10,7 @@ hugoroot/public
 hugoroot/resources/_gen/
 hugoroot/.hugo_build.lock
 
-# Obsidian Templates
-mnt/blog-source/Templates
-mnt/blog-source/.obsidian
+# Ignore the blog source since 
+# we are pulling it in as a submodule
+# when building
+mnt/blog-source
