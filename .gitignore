@@ -13,4 +13,4 @@ hugoroot/.hugo_build.lock
 # Ignore the blog source since 
 # we are pulling it in as a submodule
 # when building
-mnt/blog-source
+# mnt/blog-source
