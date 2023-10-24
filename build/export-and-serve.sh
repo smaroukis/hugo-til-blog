@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # running from "(proj root)/build" dir 
-EXPORT_BINARY="./mnt/obsidian-export/target/debug/obsidian-export"
+EXPORT_BINARY="./mnt/obsidian-export-binary/obsidian-export"
 VAULT_PATH="./mnt/blog-source"
 HUGO_ROOT="./hugoroot"
 

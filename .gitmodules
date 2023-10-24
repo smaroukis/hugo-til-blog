@@ -1,12 +1,6 @@
-[submodule "mnt/obsidian-export"]
-	path = mnt/obsidian-export
-	url = git@github.com:zoni/obsidian-export.git
 [submodule "hugoroot/themes/hugo-bearcub"]
 	path = hugoroot/themes/hugo-bearcub
 	url = git@github.com:clente/hugo-bearcub.git
-[submodule "til"]
-	path = til
-	url = git@github.com:smaroukis/til
 [submodule "mnt/blog-source"]
 	path = mnt/blog-source
 	url = git@github.com:smaroukis/til
