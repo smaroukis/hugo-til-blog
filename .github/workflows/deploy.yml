@@ -1,0 +1,52 @@
+name: Publish to GH Pages
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+#  checkout destination - this is where we setup the `gh-pages` destination folder and path
+      - name: Checkout destination
+        uses: actions/checkout@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          ref: gh-pages
+          path: built-site
+
+# run local build/export-and-serve.sh script 
+      - name: Setup Site
+        run: |
+          chmod +x build/export-and-serve.sh
+          ./build/export-and-serve.sh
+# Note this cd's to the hugoroot when done
+
+# RUNNER_TEMP is a temp folder that is created by the runner, stored for the entire workflow
+      - name: Setup Hugo
+        run: |
+          curl -L -o /tmp/hugo.tar.gz 'https://github.com/gohugoio/hugo/releases/download/v0.110.0/hugo_extended_0.110.0_linux-amd64.tar.gz'
+          tar -C ${RUNNER_TEMP} -zxvf /tmp/hugo.tar.gz hugo          
+
+# We're in the correct folder, so we can run hugo
+      - name: Build
+        run: ${RUNNER_TEMP}/hugo
+
+# #GITHUB_WORKSPACE is where we cloned the repo to
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        run: |
+          cp -R public/* ${GITHUB_WORKSPACE}/built-site/
+          cd ${GITHUB_WORKSPACE}/built-site
+          git add .
+          git config user.name 'smaroukis'
+          git config user.email 'smaroukis@gmail.com'
+          git commit -m 'Built site from Action'
+          git push

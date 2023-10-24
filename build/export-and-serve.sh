@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # running from "(proj root)/build" dir 
-EXPORT_BINARY="../mnt/obsidian-export/target/debug/obsidian-export"
-VAULT_PATH="../mnt/blog-source"
-HUGO_ROOT="../hugoroot"
+EXPORT_BINARY="./mnt/obsidian-export/target/debug/obsidian-export"
+VAULT_PATH="./mnt/blog-source"
+HUGO_ROOT="./hugoroot"
 
 function copy_vault {
     rm -rf $VAULT_PATH    
@@ -31,13 +31,15 @@ echo "🍿 Preparing hugo content..."
 prepare_hugo
 
 echo "🍿 Exporting obsidian vault with obsidian-export..."
-# Using dev version of obsidian-export
+# Export obsidian vault to $HUGO_ROOT/content/posts (using version with LINK-STRATEGY)
 $EXPORT_BINARY "$VAULT_PATH" --start-at "$VAULT_PATH" --frontmatter=always --link=none $HUGO_ROOT/content/posts/
 # added:   --link LINK-STRATEGY       Link strategy (one of: encoded, none) (default: encoded)
 
 if [ "$GITHUB_ACTIONS" ]; then
   # TODO may need to build into different dir, see script/publish setup
-  echo "Defer to Github Actions for building site within runner..."
+  echo "CD'ing to $HUGO_ROOT"
+  cd $HUGO_ROOT
+  echo "Defering to Github Actions for building site within runner..."
 else
   echo "🏗 Not a Github Action, Serving blog locally..."
   pushd $HUGO_ROOT > /dev/null
