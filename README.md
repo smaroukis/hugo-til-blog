@@ -5,4 +5,7 @@
 
 ## Working On
 - gh-pages fails because of the binary is only for macos/Darwin, need to compile for linux
-- 
+
+
+TODO
+- [] avoid publishing draft = False files

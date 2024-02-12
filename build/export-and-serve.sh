@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#This Bash script automates the preparation of content for a blog using Hugo, 
-#including cloning a source repository, organizing content, exporting an Obsidian vault, 
-#and optionally serving the blog locally or within a GitHub Actions environment.
-
 # 1 - Removes and Re-Clones the TIL blog source markdown files to get the newest ones 
 # 2 - Clears the old content in the hugo site under "(site root)/content/posts"
 # 3 - Uses the obsidian-export rust script to export the markdown files formatted for hugo into /content/posts
@@ -13,9 +9,16 @@ EXPORT_BINARY="./mnt/obsidian-export-binary/obsidian-export"
 VAULT_PATH="./mnt/blog-source"
 HUGO_ROOT="./hugoroot"
 
-function copy_vault {
+# not in use
+function remove_and_clone_vault {
     rm -rf $VAULT_PATH    
     git clone https://github.com/smaroukis/til $VAULT_PATH
+    # remove README.md from source repo
+    rm $VAULT_PATH/README.md
+}
+
+function update_vault {
+    git -C $VAULT_PATH pull origin main
     # remove README.md from source repo
     rm $VAULT_PATH/README.md
 }
@@ -33,7 +36,7 @@ function prepare_hugo {
 }
 
 echo "🍿 Preparing blog source / vault..."
-copy_vault
+update_vault
 
 echo "🍿 Preparing hugo content..."
 prepare_hugo
