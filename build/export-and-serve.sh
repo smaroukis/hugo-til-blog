@@ -5,9 +5,22 @@
 # 3 - Uses the obsidian-export rust script to export the markdown files formatted for hugo into /content/posts
 
 # running from "(proj root)/build" dir 
-EXPORT_BINARY="./mnt/obsidian-export-binary/obsidian-export"
 VAULT_PATH="./mnt/blog-source"
 HUGO_ROOT="./hugoroot"
+
+# Get the architecture and OS of the host system
+HOST_ARCH=$(uname -m) # x86_64 or arm64
+HOST_OS=$(uname -s) # Linux or Darwin
+ 
+# Set the variable based on the architecture
+if [[ "$HOST_ARCH" == "arm64" ]]; then
+    EXPORT_BINARY="./mnt/obsidian-export-binary/obsidian-export-aarch64-apple-darwin"
+elif [[ "$HOST_ARCH" == "x86_64" ]]; then
+    EXPORT_BINARY="./mnt/obsidian-export-binary/obsidian-export-x86_64-linux"
+else
+    echo "Unknown architecture and OS: $HOST_ARCH $HOST_OS"
+    exit 1
+fi
 
 # not in use
 function remove_and_clone_vault {
