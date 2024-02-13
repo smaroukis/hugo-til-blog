@@ -18,7 +18,14 @@ Clone `smaroukis/obsidian-export` and `cd` into the folder with the `cargo.toml`
 - using rust `rustc 1.73.0 (cc66ad468 2023-10-03)` (from `rustc --version`)
 - using cargo `cargo 1.73.0 (9c4383fb5 2023-08-26)`
 
+Setting up the VPS
+`sudo apt-get install build-essential`
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+`source $HOME/.cargo/env`
+`rustup default stable`
 
+Building
+`cargo build`from the rust project root 
 
 
 TODO
