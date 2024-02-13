@@ -1,10 +1,10 @@
 #!/bin/bash
+# Needs to be run from the project root not the /build directory
 
 # 1 - Removes and Re-Clones the TIL blog source markdown files to get the newest ones 
 # 2 - Clears the old content in the hugo site under "(site root)/content/posts"
 # 3 - Uses the obsidian-export rust script to export the markdown files formatted for hugo into /content/posts
 
-# running from "(proj root)/build" dir 
 VAULT_PATH="./mnt/blog-source"
 HUGO_ROOT="./hugoroot"
 
