@@ -29,12 +29,11 @@ function clone_vault {
 
 # here - issue with not updating the submodule, but updating hte parent
 function update_vault {
-    # Change directory to the Vault repository
-    cd "$VAULT_PATH" || exit 1
     # Update the submodule recursively
     git submodule update --init --remote mnt/blog-source
     # Pull the latest changes in the Vault repository
-    git pull origin main
+    cd "$VAULT_PATH" || exit 1
+    # Change directory to the Vault repository
     # Remove README.md from the source repo
     rm README.md
     # Change back to the previous directory
@@ -80,7 +79,7 @@ else
   echo "🏗 Not a Github Action, Serving blog locally..."
   pushd "$HUGO_ROOT" > /dev/null
   # here currently evaluating built files
-  hugo -D --destination ../docs
+  hugo server --disableFastRender --buildDrafts --destination ../docs
 #   hugo server -D --destination ../docs # serves locally with drafts 
 #    Q: do we need to configure base-url ?
   popd > /dev/null

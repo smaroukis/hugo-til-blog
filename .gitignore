@@ -10,7 +10,12 @@ hugoroot/public
 hugoroot/resources/_gen/
 hugoroot/.hugo_build.lock
 
-# Ignore the blog source since 
+# Ignore the blog source changes since 
 # we are pulling it in as a submodule
 # when building
 mnt/blog-source
+
+# Ignore the built site
+docs/
+
+.vscode/launch.json
