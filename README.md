@@ -1,3 +1,6 @@
+## Update 2024-02-18 - Archiving
+Blog has been moved to https://github.com/smaroukis/quartz for ease of publishing. Code will be archived for future reference.
+
 
 ## Build Notes
 - currently using a custom compiled version of `zoni/obsidian-export`, found at [smaroukis/obsidian-export](https://github.com/smaroukis/obsidian-export), specifically merged with [this pull request](LINK TODO) which adds support for non-url encoded filenames. See compiling this program below.
